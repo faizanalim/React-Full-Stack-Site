@@ -8,28 +8,25 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ArticlesListPage from './pages/ArticlesListPage'
 import ArticlePage from './pages/ArticlePage'
+import Layout from './Layout';
 
-const routes = [
-  {
+const routes = [{
+  path: '/',
+  element: <Layout />,
+  children: [{
     path: '/',
     element: <HomePage />
-  },
-  {
-    path: 'about',
+  }, {
+    path: '/about',
     element: <AboutPage />
-  },
-
-  {
+  }, {
     path: '/articles',
     element: <ArticlesListPage />
-  },
-
-  {
+  }, {
     path: '/articles/individual',
     element: <ArticlePage />
   }]
-
-
+}]
 
 const router = createBrowserRouter(routes);
 
