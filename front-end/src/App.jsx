@@ -3,11 +3,12 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios';
 import './App.css'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ArticlesListPage from './pages/ArticlesListPage'
-import ArticlePage from './pages/ArticlePage'
+import ArticlePage, { loader as articleLoader } from './pages/ArticlePage'
 import Layout from './Layout';
 import NotFoundPage from './pages/NotFoundPage'
 
@@ -26,7 +27,8 @@ const routes = [{
     element: <ArticlesListPage />
   }, {
     path: '/articles/:name',
-    element: <ArticlePage />
+    element: <ArticlePage />,
+    loader: articleLoader
   }]
 }]
 
